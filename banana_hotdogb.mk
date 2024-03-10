@@ -11,11 +11,21 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from hotdogb device
 $(call inherit-product, device/oneplus/hotdogb/device.mk)
 
-# Inherit some common YAAP stuff.
-$(call inherit-product, vendor/yaap/config/common_full_phone.mk)
+# Inherit some common Bananadroid stuff.
+$(call inherit-product, vendor/banana/config/common.mk)
+
+# Supported Device Flags.
+BANANA_MAINTAINER := NILOY
+WITH_GAPPS := true
+TARGET_HAS_UDFPS := true
+TARGET_SUPPORTS_QUICK_TAP := true
+TARGET_FACE_UNLOCK_SUPPORTED := true
+TARGET_SUPPORTS_TOUCHGESTURES := true
+TARGET_SUPPORTS_GOOGLE_RECORDER := true
+TARGER_SUPPORTS_NEXT_GEN_ASSISTANT := true
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := yaap_hotdogb
+PRODUCT_NAME := banana_hotdogb
 PRODUCT_DEVICE := hotdogb
 PRODUCT_BRAND := OnePlus
 PRODUCT_MODEL := HD1905
@@ -29,9 +39,9 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 PRODUCT_CHARACTERISTICS := nosdcard
 
 # Boot animation
-scr_resolution := 1080
-TARGET_SCREEN_HEIGHT := 2400
 TARGET_SCREEN_WIDTH := 1080
+TARGET_SCREEN_HEIGHT := 2240
+TARGET_BOOT_ANIMATION_RES := 1080
 
 # Build info
 BUILD_FINGERPRINT := "OnePlus/OnePlus7T/OnePlus7T:12/SKQ1.211113.001/Q.202303230244:user/release-keys"
